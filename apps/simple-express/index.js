@@ -6,9 +6,9 @@ const path = require("path")
 const app = express()
 const port = 3000
 
-const logPath = path.join(__dirname, "shared/logs")
+const logsPath = path.join(__dirname, "shared/logs")
 
-const rfsStream = rfs.createStream(path.join(logPath, "log.log"), {
+const rfsStream = rfs.createStream(path.join(logsPath, "log.log"), {
   size: "10M",
   interval: "1d",
 })
