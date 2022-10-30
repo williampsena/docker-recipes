@@ -26,6 +26,8 @@ services:
         UID: ${UID}
     volumes:
       - "../shared:/home/node/app/shared"
+    environment:
+      - NODE_ENV=production
     ports:
       - "3001:3001"
     depends_on:
