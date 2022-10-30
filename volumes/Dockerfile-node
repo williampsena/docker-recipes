@@ -1,0 +1,32 @@
+FROM node:lts-alpine as base
+
+ARG UID=2000
+ARG GID=2000
+ARG SOURCE
+
+USER root
+
+# adds usermod and groupmod
+RUN apk --no-cache add shadow
+
+RUN usermod -u $UID node && groupmod -g $GID node
+
+FROM base as assets
+
+WORKDIR /home/node/app
+
+ADD $SOURCE /home/node/app
+
+RUN mkdir -p /home/node/app/shared/logs
+
+RUN chown -R $UID:$GID /home/node/app
+
+FROM assets as app
+
+EXPOSE 3000
+
+user node
+
+RUN npm install
+
+CMD npm start

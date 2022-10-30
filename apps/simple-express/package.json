@@ -1,0 +1,19 @@
+{
+  "dependencies": {
+    "express": "^4.18.2",
+    "rotating-file-stream": "^3.0.4"
+  },
+  "name": "simple-express",
+  "version": "1.0.0",
+  "description": "simple node express http server",
+  "main": "index.js",
+  "devDependencies": {
+    "morgan": "^1.10.0"
+  },
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "William Sena",
+  "license": "ISC"
+}
