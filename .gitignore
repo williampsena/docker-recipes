@@ -1,2 +1,4 @@
 node_modules
 shared/logs/**
+apps/aspnet-hit-counter/obj
+apps/aspnet-hit-counter/bin

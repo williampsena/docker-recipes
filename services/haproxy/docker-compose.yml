@@ -1,0 +1,30 @@
+version: "3.8"
+
+services:
+  haproxy:
+    image: haproxy:2.7
+    networks:
+      - haproxy
+    ports:
+      - 8000:8000
+    volumes:
+      - ./conf/haproxy.cfg:/usr/local/etc/haproxy/haproxy.cfg:ro
+
+  app-first:
+    networks:
+      - haproxy
+    build:
+      context: ../../apps/aspnet-hit-counter
+    environment:
+      ASPNETCORE_URLS: "http://+:8000" 
+
+  app-second:
+    networks:
+      - haproxy
+    build:
+      context: ../../apps/aspnet-hit-counter
+    environment:
+      ASPNETCORE_URLS: "http://+:8000" 
+
+networks:
+  haproxy:
