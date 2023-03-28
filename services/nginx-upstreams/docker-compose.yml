@@ -1,21 +1,21 @@
-version: "3.8"
+version: '3.8'
 
 services:
-  haproxy:
-    image: haproxy:2.7
+  nginx:
+    image: nginx:1.23
     networks:
-      - haproxy
-    ports:
-      - 8000:8000
+      - nginx-upstreams
     volumes:
-      - ./conf/haproxy.cfg:/usr/local/etc/haproxy/haproxy.cfg:ro
+      - ./nginx.conf:/etc/nginx/nginx.conf:ro
+    ports: 
+      - 8000:8000
     depends_on:
       - app-first
       - app-second
 
   app-first:
     networks:
-      - haproxy
+      - nginx-upstreams
     build:
       context: ../../apps/aspnet-hit-counter
     environment:
@@ -23,11 +23,11 @@ services:
 
   app-second:
     networks:
-      - haproxy
+      - nginx-upstreams
     build:
       context: ../../apps/aspnet-hit-counter
     environment:
       ASPNETCORE_URLS: "http://+:8000" 
 
 networks:
-  haproxy:
+  nginx-upstreams:
