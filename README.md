@@ -16,3 +16,5 @@ This directory is used to transfer files between docker containers and hosts; yo
 # Related articles
 
  - [Handling Docker Volumes Permissions without root privilege](https://willsena.dev/handling-docker-volumes-permissions-without-root-privilege/)
+ - [Understanding load balancers through practical examples](https://willsena.dev/understanding-load-balancers-through-practical-examples/)
+ - [Building a Squid Proxy Container to test NPM with HTTP Proxy](https://willsena.dev/building-a-squid-proxy-container-to-test-npm-with-http-proxy/)
