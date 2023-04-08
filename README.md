@@ -13,6 +13,10 @@ docker-compose -f volumes/docker.compose.shared-with-host-non-root.yml up -d --b
 
 This directory is used to transfer files between docker containers and hosts; your current user should be the directory owner.
 
+# Sections
+
+- [Docker build samples](build/README.md)
+
 # Related articles
 
  - [Handling Docker Volumes Permissions without root privilege](https://willsena.dev/handling-docker-volumes-permissions-without-root-privilege/)
