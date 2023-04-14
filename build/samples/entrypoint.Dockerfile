@@ -1,4 +1,4 @@
-FROM busybox
+FROM busybox as base
 
 ENTRYPOINT ["bin/sh"]
 

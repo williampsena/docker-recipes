@@ -2,7 +2,7 @@ FROM alpine:3.17 as base
 
 WORKDIR /app
 
-FROM alpine:3.17 as super_secret
+FROM ubuntu:22.10 as super_secret
 
 RUN echo "you_should_not_use_secrets_here" > /secret.txt
 
