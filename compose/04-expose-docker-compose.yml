@@ -1,0 +1,19 @@
+version: '3.8'
+
+name: test-expose
+
+services:
+    whoami:
+      image: traefik/whoami
+      ports:
+        - 8080:80
+      environment:
+        WHOAMI_NAME: port-8080
+
+    whoami2:
+      image: traefik/whoami
+      ports:
+        - 8081:8081
+      environment:
+        WHOAMI_PORT_NUMBER: 8081
+        WHOAMI_NAME: port-8081

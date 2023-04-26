@@ -1,0 +1,10 @@
+version: '3.8'
+
+name: test-entrypoint
+
+services:
+    busybox:
+      image: busybox
+      entrypoint: env
+      environment:
+        SOME_ENV: true

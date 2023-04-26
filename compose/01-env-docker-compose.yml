@@ -1,0 +1,17 @@
+version: '3.8'
+
+name: test-env
+
+services:
+    busybox:
+      image: busybox
+      command: env
+      environment:
+        SOME_ENV: true
+
+    busybox2:
+      image: busybox
+      command: env
+      environment:
+        - SOME_ENV=true
+

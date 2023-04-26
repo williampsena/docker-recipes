@@ -1,0 +1,13 @@
+version: '3.8'
+
+name: test-user
+
+services:
+    busybox-root:
+      image: busybox
+      entrypoint: whoami
+
+    busybox-whoami:
+      image: busybox
+      user: nobody
+      entrypoint: whoami
