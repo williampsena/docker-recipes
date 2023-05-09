@@ -9,6 +9,7 @@ Always build the docker compose file from the root directory, for example:
 ```shell
 docker-compose -f volumes/docker.compose.shared-with-host-non-root.yml up -d --build
 ```
+
 # Shared directory
 
 This directory is used to transfer files between docker containers and hosts; your current user should be the directory owner.
