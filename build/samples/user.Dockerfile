@@ -4,7 +4,7 @@ WORKDIR /app
 
 USER root
 
-RUN apk add curl
+RUN apk --update add curl
 
 RUN adduser -D foo
 
