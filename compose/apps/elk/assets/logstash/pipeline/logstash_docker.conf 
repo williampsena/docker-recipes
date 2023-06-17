@@ -1,0 +1,15 @@
+input {
+  gelf {
+    id => "docker_gelf_plugin"
+    type => docker
+    host => "0.0.0.0"
+  }
+}
+
+output {
+  stdout {}
+  elasticsearch {
+    hosts => ["http://elasticsearch:9200"]
+    index => "docker"
+  }
+}
